@@ -2,6 +2,7 @@ package aoc
 
 import (
 	"bufio"
+	"io/ioutil"
 	"os"
 	"strconv"
 )
@@ -32,4 +33,11 @@ func FileToLines(filePath string) []string {
 	}
 	Check(scanner.Err())
 	return lines
+}
+
+// FileToBytes reads a file into an array of bytes
+func FileToBytes(filePath string) []byte {
+	bs, err := ioutil.ReadFile(filePath)
+	Check(err)
+	return bs
 }
