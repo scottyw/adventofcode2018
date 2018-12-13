@@ -41,3 +41,8 @@ func FileToBytes(filePath string) []byte {
 	Check(err)
 	return bs
 }
+
+// FileToString reads a file into a string
+func FileToString(filePath string) string {
+	return string(FileToBytes(filePath))
+}
