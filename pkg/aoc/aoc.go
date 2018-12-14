@@ -14,6 +14,19 @@ func Check(e error) {
 	}
 }
 
+// Insert an int into a slice of ints
+func Insert(s []int, i, value int) []int {
+	s = append(s, 0)
+	copy(s[i+1:], s[i:])
+	s[i] = value
+	return s
+}
+
+// Delete an int from a slice of ints
+func Delete(s []int, i int) []int {
+	return append(s[:i], s[i+1:]...)
+}
+
 // Atoi converts a string to an int and panics if it goes wrong
 func Atoi(s string) int {
 	i, err := strconv.Atoi(s)
